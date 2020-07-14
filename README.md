@@ -1,9 +1,9 @@
-# Alien Invaders
+# Hero Setter
 
-[Deployed website](https://voggastur.github.io/interactive-frontend-project/)
-[Project Repository](https://github.com/Voggastur/interactive-frontend-project)
+[Deployed website](https://voggastur.github.io/data-centric-development-project/)
+[Project Repository](https://github.com/Voggastur/data-centric-development-project)
 
-The aim of this website is to present my Javascript skills as a front end developer.
+The aim of this website is to present my skills in Python and Jinja templating language to present information from a backend database (mongoDB).
 
 
 ## Table of Contents
@@ -36,7 +36,7 @@ The aim of this website is to present my Javascript skills as a front end develo
 
 ## 1. UX <a name="UX"></a>
 
-The primary target audience are collaborators/employers in the game industry who wish to see my knowledge in Javascript/jQuery.
+The primary target audience are collaborators/employers in the game industry who wish to see my knowledge in Python/Flask/Jinja.
 
 
 #### I. User Stories: <a name="UX2"></a>
