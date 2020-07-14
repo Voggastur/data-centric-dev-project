@@ -1,0 +1,55 @@
+/* General and Nav */
+
+* {
+  font-family: "Special Elite", cursive;
+  margin: 0;
+  padding: 0;
+}
+
+.brand-logo {
+  margin-left: 20px;
+}
+
+/* Slider Section */
+
+.heading1,
+.heading2 {
+  display: inline-block;
+  font-weight: bold;
+  text-shadow: 1px 1px #ccc;
+  transition: text-shadow 0.3s ease;
+}
+
+.heading1:hover,
+.heading2:hover {
+  cursor: pointer;
+  text-shadow: 2px 2px #aaa;
+}
+
+.divider {
+  height: 50px;
+}
+
+.adv-divider {
+    margin: 15px 5px 10px;
+}
+
+/* Hero Tables*/
+
+.card {
+  font-family: "Special Elite", cursive;
+}
+
+/* Modal */
+
+.modal {
+  font-family: "Special Elite", cursive;
+}
+
+/* Large screens */
+@media screen and (min-width: 600px) {
+}
+
+/* Small screens */
+@media screen and (max-width: 600px) {
+}
