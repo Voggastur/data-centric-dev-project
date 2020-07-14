@@ -2,29 +2,111 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<!-- Fontawesome Icons -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Special+Elite&display=swap" rel="stylesheet">
-	<!-- My CSS -->
-	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Special+Elite&display=swap"
+		rel="stylesheet" />
 	<!-- My shortcut icon -->
 	<link rel="shortcut icon" type="image/jpg" href="{{url_for('static', filename='images/favicon.ico')}}" />
-	<link rel="stylesheet" href="../static/css/style.css">
-	<title>Adventure Set</title>
+	<!-- Materialize CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+	<!-- My CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+	<title>Hero Set</title>
 </head>
+
 <body>
+	<header>
+		<nav class="nav-wrapper blue-grey darken-2">
+			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2">
+				Hero Set
+			</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li>
+					<a class="grey-text text-lighten-2" href="{{url_for('get_heroes')}}">
+						<i class="fas fa-home"></i>
+						<span>Home</span>
 
-{% block content %} {% endblock %}
+					</a>
+				</li>
+				<li>
+					<a class="grey-text text-lighten-2" href="{{url_for('add_hero')}}">
+						<i class="fa fa-user-plus"></i>
+						<span>Create Hero</span>
 
-    <!-- jQuery CDN -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+					</a>
+				</li>
+				<li>
+					<a class="grey-text text-lighten-2" href="{{url_for('get_adventure')}}">
+						<i class="fas fa-chess-rook"></i>
+						<span>Adventures</span>
+
+					</a>
+				</li>
+			</ul>
+			<ul class="right hide-on-large-only">
+				<li><a href="{{url_for('get_heroes')}}">
+						<i class="fas fa-home"></i>
+					</a></li>
+				<li><a href="{{url_for('add_hero')}}">
+						<i class="fa fa-user-plus"></i>
+					</a></li>
+				<li><a href="{{url_for('get_adventure')}}">
+						<i class="fas fa-chess-rook"></i>
+					</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Section: Slider -->
+	<section class="slider">
+		<ul class="slides">
+			<li>
+				<img src="{{ url_for('static', filename='images/adventurer_team.jpg') }}" alt="Imposing band of heroes">
+				<div class="caption center-align">
+
+					<h2 class="heading1 grey-text text-lighten-3">Hero Set, home of roleplay characters</h2>
+					<h5 class="heading2 grey-text text-lighten-3 hide-on-small-only">Create your heroes ahead of
+						your
+						adventures</h5>
+				</div>
+			</li>
+			<li>
+				<img src="{{ url_for('static', filename='images/tavern.jpg') }}" alt="Characters sitting around in a medieval tavern">
+				<div class="caption right-align">
+					<h2 class="heading1 grey-text text-lighten-3">Forgot arrows for your longbow?
+					</h2>
+					<h5 class="heading2 grey-text text-lighten-3 hide-on-small-only">Plan ahead with guidance from
+						your
+						dungeon master, and discuss with your team</h5>
+				</div>
+			</li>
+			<li>
+				<img src="{{ url_for('static', filename='images/adventurer_team4.jpg') }}" alt="Group of heroes">
+				<div class="caption left-align">
+					<h2 class="heading1 grey-text text-lighten-3">Safely Stored at MongoDB</h2>
+					<h5 class="heading2 grey-text text-lighten-3 hide-on-small-only">Proudly update your heroes as time goes by</h5>
+				</div>
+			</li>
+		</ul>
+	</section>
+
+	<hr class="divider">
+
+	<main>
+		{% block content %} {% endblock %}
+	</main>
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js"
+		integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 	<!-- My Javascript -->
-    <script type="text/javascript" src="../static/js/script.js/"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+	<!-- Materialize JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block content %}
+<h3>Add Adventure</h3>
+<form action="{{ url_for('insert_adventure') }}" method="POST" class="col s8 offset-s2">
+	<div class="row">
+		<div class="input-field col s12 white-text">
+			<i class="fas fa-chess-rook"></i>
+			<input id="adventure_name" name="adventure_name" type="text" class="validate">
+			<label for="adventure_name">Adventure Name</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12 white-text">
+			<input id="hero_name" name="hero_name" type="text"/>
+			<label for="hero_name"><i class="fas fa-pen"></i> Hero name</label>
+		</div>
+	</div>
+	<div class="row">
+		<button class="btn waves-effect" type="submit" name="action">Add Adventure
+            <i class="fas fa-envelope-square"></i>
+        </button>
+	</div>
+</form>
+
+{% endblock %}

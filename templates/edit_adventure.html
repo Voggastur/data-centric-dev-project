@@ -1,0 +1,26 @@
+{% extends 'base.html'%} {% block content %}
+
+<h3>Edit Adventures</h3>
+<div class="row">
+	<form action="{{ url_for('update_adventure', adventures_id=adventure._id) }}" method="POST"
+		class="col s10 offset-s1">
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-chess-rook"></i>
+				<input id="adventure_name" name="adventure_name" type="text" class="validate" value="{{adventures.adventure_name}}">
+				<label for="adventure_name">Name of Adventure</label>
+			</div>
+			<div class="input-field col s12">
+				<i class="fas fa-chess-rook"></i>
+				<input id="adventure_topic" name="adventure_topic" type="text" class="validate" value="{{adventures.adventure_topic}}">
+				<label for="adventure_topic">A short bit of the story</label>
+			</div>
+		</div>
+		<hr>
+		<footer class="row">
+			<button class="btn waves-effect" type="submit" name="action">Submit New Adventure</button>
+		</footer>
+	</form>
+</div>
+
+{% endblock %}

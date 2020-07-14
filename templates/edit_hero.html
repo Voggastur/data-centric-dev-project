@@ -1,0 +1,86 @@
+{% extends 'base.html'%} {% block content %}
+
+<h3>Edit Task</h3>
+<div class="row">
+	<form action="{{ url_for('update_hero', hero_id=hero._id) }}" method="POST" class="col s12 brown darken-3 white-text">
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-chess-rook"></i>
+				<select id="adventures" name="adventure_name">
+                  <option value="" disabled selected>Choose Adventure</option>
+                  {% for mission in adventures %}
+                      {% if mission.adventure_name == hero.adventure_name %}
+                      <option value="{{mission.adventure_name}}" selected >{{mission.adventure_name}}</option>
+                      {% else %}
+                       <option value="{{mission.adventure_name}}">{{mission.adventure_name}}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+				<label for="adventures">Hero Set</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-pen"></i>
+				<input id="hero_name" name="hero_name" type="text" class="validate" value="{{heroes.hero_name}}">
+				<label for="hero_name">Hero Name</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-fist-raised"></i>
+				<input name="weapon" id="weapon" type="text" class="validate" value="{{heroes.weapon}}">
+				<label for="weapon">Hero weapon</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-shield-alt"></i>
+				<input name="armor" id="armor" type="text" class="validate" value="{{heroes.armor}}">
+				<label for="armor">Hero armor</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-user"></i>
+				<input name="race" id="race" type="text" class="validate" value="{{heroes.race}}">
+				<label for="race">Hero race</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-hand-holding"></i>
+				<input name="profession" id="profession" type="text" class="validate" value="{{heroes.profession}}">
+				<label for="profession">Hero profession</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-home"></i>
+				<input name="home" id="home" type="text" class="validate" value="{{heroes.home}}">
+				<label for="home">Hero home</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-horse"></i>
+				<input name="mount" id="mount" type="text" class="validate" value="{{heroes.mount}}">
+				<label for="mount">Hero mount</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-shopping-bag"></i>
+				<textarea name="possessions" id="possessions" class="materialize-textarea">{{heroes.possessions}}</textarea>
+				<label for="possessions">Hero possessions</label>
+			</div>
+		</div>
+		<div class="row">
+			<button class="btn btn-small waves-effect" type="submit" name="action">Submit Hero
+                <i class="fas fa-envelope"></i>
+             </button>
+		</div>
+	</form>
+</div>
+
+{% endblock %}
