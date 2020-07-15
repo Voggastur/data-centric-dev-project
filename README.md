@@ -1,7 +1,7 @@
-# Hero Setter
+# Hero Set
 
 [Deployed website](https://voggastur.github.io/data-centric-development-project/)
-[Project Repository](https://github.com/Voggastur/data-centric-development-project)
+[Project Repository](https://github.com/Voggastur/data-centric-dev-project)
 
 The aim of this website is to present my skills in Python and Jinja templating language to present information from a backend database (mongoDB).
 
@@ -36,7 +36,7 @@ The aim of this website is to present my skills in Python and Jinja templating l
 
 ## 1. UX <a name="UX"></a>
 
-The primary target audience are collaborators/employers in the game industry who wish to see my knowledge in Python/Flask/Jinja.
+The primary target audience are collaborators/employers in the who wish to see my knowledge in Python/Flask/Jinja.
 
 
 #### I. User Stories: <a name="UX2"></a>
@@ -54,16 +54,16 @@ The primary target audience are collaborators/employers in the game industry who
 * [Wireframes.pdf](assets/wireframes/wireframe.pdf)
 
 
-1. I changed the direction of the game to scroll horizontal instead of vertical since I wanted to stand out from other examples I found on the internet.
+1. I think the navbar with the replacing icons for mobile was implemented fine, as not to override the logo which switches to middle position on small screens.
 
-2. The spaceship can now move in 4 directions, up, right, down and left. Even though only sideways movement is vital to the game, I thought it could enhance the game experience to move up closer to the aliens.
-The key to this knowledge was to learn that every button has its own keyCode and so I looked up needed keys by console.log(e.keyCode), and lastly how to put them to use.
+2. The slider is a materialize component, and presents my website with images and small captions trying to explain the websites purpose
 
-3. At first I thought I could just move the objects via a for loop, but I had to include a function to push every object onto the HTML via template literals.
+3. The cards are sorted as 2 in every row for large screens and 1 every row for small screens, a change from the 3 as shown in the wireframes.
+    I felt that the content was too crowded for each card so I changed it to 2
 
-4. The alien movement matches the wireframes overall, and moves sideways until it bounces into walls and steps closer to the player and changes sideway direction to fly towards the other side
+4. Materialize framework was used to achieve responsiveness
 
-5. The overlay(startmenu) matches the wireframe kind of as well, but I added the game title as a larger h1 above the Start Game button instead of the title inside the button, to make better use of empty estate
+5. The website uses Jinja to import content into the base.html below the slider component and above the footer
 
 
 
@@ -83,10 +83,6 @@ The key to this knowledge was to learn that every button has its own keyCode and
 
 * I learned alot during the development of this project, I had to read up on W3C articles everyday and I saw many youtube tutorials on similar projects, it has been a learning experience.
 
-* collisionDetection is my most worked on function, and it detects rockets against aliens, and lasers against aliens, then splices the array-objects and calls the checkGameover() function.
-* For a while earlier in my development everything was offset by a few pixels so I had to test my way to find arbitrary numbers to match the alien hitboxes, this took me more time than I want to admit..
-* however the offset bug was later randomly fixed as I fiddled in other functions and now it just includes the + 30 to detect the hitbox of the alien size.
-
 * Near the end of the project I removed unused constants like the gamescreen width and heights, and instead used fixed numbers where needed for spaceship move limits and alien move limits,
 
 * I had a plan to implement spliced explosions in place for the aliens, with a short css animation to remove the explosion after 1s as well, but after some stonewalling and lost development time I dropped it out of scope for this project.
@@ -94,7 +90,9 @@ The key to this knowledge was to learn that every button has its own keyCode and
 
 ## 2. Features <a name="Features"></a>
 
-* The game is a Space Invaders type of game with moving pictures and a slow scrolling background, 
+* The website is an online storage of heroes relating to role-play gamers who meet from time to time to play through an adventure that one friend will be the storyteller of and also act as game-master (judge).
+Upon completion of an adventure updating is needed for the heroes equipment and experiences, and this is what the website provides
+
 * The player must destroy 8 Aliens with his spaceship equipped with 2 types of weaponry while avoiding Alien energybombs,
 * And he must do so before the aliens reach the left side of the screen.
 
@@ -111,9 +109,9 @@ The key to this knowledge was to learn that every button has its own keyCode and
 
 ## 3. Features for the future <a name="Features2"></a>
 
-* Score
+* An author MDB collection could be added which links heroes to the author that created them
 
-* More Levels - need to familiarize myself with constructor functions (I think), to repopulate game with more aliens in other way than location.reload
+* In addition I want to add a user login, so that editing of heroes could be restricted to the heroes that already have logged in session
 
 * Less linear alien movement
 
