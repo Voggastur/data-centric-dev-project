@@ -6,44 +6,133 @@
   padding: 0;
 }
 
+.link-text i,
+.link-text span,
+.brand-logo {
+  font-size: 1.3em;
+}
+
 .brand-logo {
   margin-left: 20px;
 }
 
 /* Slider Section */
 
-.heading1,
-.heading2 {
-  display: inline-block;
-  font-weight: bold;
-  text-shadow: 1px 1px #ccc;
-  transition: text-shadow 0.3s ease;
+.caption1 {
+  font-family: "Grenze Gotisch", cursive;
+  text-transform: capitalize;
+  font-size: 3.7em;
+  font-weight: 500;
+  text-shadow: 3px 2px #aaa;
 }
 
-.heading1:hover,
-.heading2:hover {
-  cursor: pointer;
-  text-shadow: 2px 2px #aaa;
+.caption2 {
+  font-family: "Grenze Gotisch", cursive;
+  font-size: 2.2em;
+  font-weight: 300;
+  text-shadow: 1px 1px #aaa;
 }
 
-.divider {
-  height: 50px;
+.jinja-header {
+  text-align: center;
+  text-decoration: underline;
+  background: none;
+  width: 100%;
+  height: 100px;
+}
+
+.jinja-header h1 {
+  transform: translateX(-50px);
+  font-size: 3.5em;
+}
+
+.button-wrap {
+  width: 100%;
+  padding: 10px;
+}
+
+.button-wrap button {
+  display: block;
+  margin: 0 auto;
+}
+
+.linear-gradients {
+  background: linear-gradient(217deg, #ff0000cc, #ff000000 40%),
+    linear-gradient(127deg, #00ff00cc, #00ff0000 40%),
+    linear-gradient(336deg, #0000ffcc, #0000ff00 40%);
+}
+
+.jinja-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.linear-gradients .row {
+  margin-bottom: 0;
 }
 
 .adv-divider {
-    margin: 15px 5px 10px;
+  color: #fff;
+  margin: 20px 10px;
 }
 
-/* Hero Tables*/
+/* Hero Cards */
 
 .card {
-  font-family: "Special Elite", cursive;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.card h6 {
+  border-bottom: 2px #000;
+  border-right: 2px #000;
+}
+
+.card-items {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  padding: 1px;
+}
+
+.card-items p i {
+  font-size: 1em;
+}
+
+.card-items p {
+  display: block;
+  line-height: 1.4;
+}
+
+.card-items p span {
+  font-family: inherit;
 }
 
 /* Modal */
 
 .modal {
-  font-family: "Special Elite", cursive;
+  font-family: "Oswald", sans-serif;
+}
+
+/* Forms */
+
+.form {
+  padding: 10px;
+}
+
+/* Footer */
+
+.adventure-footer {
+  padding: 10px 0px;
+}
+
+.the-real-footer {
+  height: 100px;
+}
+
+.the-real-footer p {
+  display: block;
+  margin: 0 auto;
+  font-size: 2.5em;
 }
 
 /* Large screens */
@@ -52,4 +141,18 @@
 
 /* Small screens */
 @media screen and (max-width: 600px) {
+  .caption1 {
+    font-size: 3.6em;
+  }
+  .brand-logo {
+    margin: 0;
+  }
+}
+
+/* Minimizing brand-logo for the smallest screen size in Google Dev Tools (Galaxy Fold, 284px width), to avoid overriding other nav elements */
+@media screen and (max-width: 300px) {
+  .brand-logo {
+    margin: 0;
+    font-size: 0.7em;
+  }
 }
