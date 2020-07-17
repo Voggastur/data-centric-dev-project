@@ -1,26 +1,30 @@
 {% extends 'base.html'%} {% block content %}
+<header class="jinja-header">
+	<h1>Edit Adventure</h1>
+</header>
 
-<h3>Edit Adventures</h3>
-<div class="row">
-	<form action="{{ url_for('update_adventure', adventures_id=adventure._id) }}" method="POST"
-		class="col s10 offset-s1">
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-chess-rook"></i>
-				<input id="adventure_name" name="adventure_name" type="text" class="validate" value="{{adventures.adventure_name}}">
-				<label for="adventure_name">Name of Adventure</label>
+<div class="container">
+	<div class="row">
+		<form action="{{ url_for('update_adventure', adventure_id=adventure._id) }}" method="POST"
+			class="col s8 offset-s2 form blue-grey darken-2 grey-text text-lighten-3">
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="fas fa-chess-rook prefix"></i>
+					<input id="adventure_name" name="adventure_name" type="text" class="validate" value="{{adventure.adventure_name}}">
+					<label for="adventure_name">Name of the adventure</label>
+				</div>
+				<div class="input-field col s12">
+					<i class="fas fa-chess-pawn prefix"></i>
+					<textarea data-length="120" id="adventure_topic" name="adventure_topic" type="text" class="materialize-textarea validate">{{adventure.adventure_topic}}</textarea>
+					<label for="adventure_topic">Story topic</label>
+				</div>
+				<footer class="button-wrap col s12 center">
+					<button class="btn waves-effect" type="submit" name="action"><i class="fas fa-envelope"></i> Submit Changes</button>
+				</footer>
 			</div>
-			<div class="input-field col s12">
-				<i class="fas fa-chess-rook"></i>
-				<input id="adventure_topic" name="adventure_topic" type="text" class="validate" value="{{adventures.adventure_topic}}">
-				<label for="adventure_topic">A short bit of the story</label>
-			</div>
-		</div>
-		<hr>
-		<footer class="row">
-			<button class="btn waves-effect" type="submit" name="action">Submit New Adventure</button>
-		</footer>
-	</form>
+
+		</form>
+	</div>
 </div>
 
 {% endblock %}
