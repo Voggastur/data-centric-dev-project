@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
@@ -70,6 +70,47 @@ def update_hero(hero_id):
 def delete_hero(hero_id):
     mongo.db.heroes.remove({'_id': ObjectId(hero_id)})
     return redirect(url_for('get_heroes'))
+
+
+@app.route('/get_adventure')
+def get_adventure():
+    return render_template('adventure.html',
+                           adventures=mongo.db.adventures.find())
+
+
+@app.route('/delete_adventure/<adventure_id>')
+def delete_adventure(adventure_id):
+    mongo.db.adventures.remove({'_id': ObjectId(adventure_id)})
+    return redirect(url_for('get_adventure'))
+
+
+@app.route('/edit_adventure/<adventure_id>')
+def edit_adventure(adventure_id):
+    the_adventure = mongo.db.adventures.find_one(
+        {"_id": ObjectId(adventure_id)})
+    return render_template('edit_adventure.html', adventure=the_adventure)
+
+
+@app.route('/update_adventure/<adventure_id>', methods=['POST'])
+def update_adventure(adventure_id):
+    mongo.db.adventures.update(
+        {'_id': ObjectId(adventure_id)},
+        {'adventure_name': request.form.get('adventure_name')},
+        {'adventure_topic': request.form.get('adventure_topic')})
+    return redirect(url_for('get_adventure'))
+
+
+@app.route('/insert_adventure', methods=['POST'])
+def insert_adventure():
+    adventures = mongo.db.adventures
+    adventures.insert_one(request.form.to_dict())
+    return redirect(url_for('get_adventure'))
+
+
+@app.route('/add_adventure')
+def add_adventure():
+    return render_template('add_adventure.html',
+                           adventures=mongo.db.adventures.find())
 
 
 if __name__ == '__main__':
