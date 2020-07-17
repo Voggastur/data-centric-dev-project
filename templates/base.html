@@ -16,35 +16,36 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 	<!-- My CSS -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-	<title>Hero Set</title>
+	<title>HeroesDB</title>
 </head>
 
 <body>
 	<header>
 		<nav class="nav-wrapper blue-grey darken-2">
-			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2">
-				Hero Set
-			</a>
+			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2 left"> HeroesDB</a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
-					<a class="grey-text text-lighten-2" href="{{url_for('get_heroes')}}">
+					<a class="grey-text text-lighten-2 link-text" href="{{url_for('get_heroes')}}">
 						<i class="fas fa-home"></i>
 						<span>Home</span>
-
 					</a>
 				</li>
 				<li>
-					<a class="grey-text text-lighten-2" href="{{url_for('add_hero')}}">
+					<a class="grey-text text-lighten-2 link-text" href="{{url_for('add_hero')}}">
 						<i class="fa fa-user-plus"></i>
 						<span>Create Hero</span>
-
 					</a>
 				</li>
 				<li>
-					<a class="grey-text text-lighten-2" href="{{url_for('get_adventure')}}">
+					<a class="grey-text text-lighten-2 link-text" href="{{url_for('get_adventure')}}">
 						<i class="fas fa-chess-rook"></i>
 						<span>Adventures</span>
-
+					</a>
+				</li>
+				<li>
+					<a class="grey-text text-lighten-2 link-text" href="{{url_for('add_adventure')}}">
+						<i class="fas fa-plus-circle"></i>
+						<span>Add Adventure</span>
 					</a>
 				</li>
 			</ul>
@@ -58,6 +59,11 @@
 				<li><a href="{{url_for('get_adventure')}}">
 						<i class="fas fa-chess-rook"></i>
 					</a></li>
+				<li>
+					<a href="{{url_for('add_adventure')}}">
+						<i class="fas fa-plus-circle"></i>
+					</a>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -86,7 +92,7 @@
 				</div>
 			</li>
 			<li>
-				<img src="{{ url_for('static', filename='images/adventurer_team4.jpg') }}" alt="Group of heroes">
+				<img src="{{ url_for('static', filename='images/hero_travel.jpg') }}" alt="Group of heroes">
 				<div class="caption left-align">
 					<h2 class="heading1 grey-text text-lighten-3">Safely Stored at MongoDB</h2>
 					<h5 class="heading2 grey-text text-lighten-3 hide-on-small-only">Proudly update your heroes as time goes by</h5>
