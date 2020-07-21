@@ -3,7 +3,7 @@
 [Deployed website](https://voggastur.github.io/data-centric-development-project/)
 [Project Repository](https://github.com/Voggastur/data-centric-dev-project)
 
-The aim of this website is to present my skills in Python and Jinja templating language to present information from a backend database (mongoDB).
+The aim of this website is to present my skills in Python Flask and Jinja to present information from a backend database (mongoDB).
 
 
 ## Table of Contents
@@ -36,17 +36,18 @@ The aim of this website is to present my skills in Python and Jinja templating l
 
 ## 1. UX <a name="UX"></a>
 
-The primary target audience are collaborators/employers in the who wish to see my knowledge in Python/Flask/Jinja.
+The primary target audience are collaborators/employers who wish to see my knowledge in Python/Flask/Jinja.
 
 
 #### I. User Stories: <a name="UX2"></a>
 
-1. As an employer who recieved a link to Johans website, I want to see the game and test it to judge his skills, so that I can assess if he's eligible for a position.
+1. As an employer who recieved a link to Johans website, I want to see the page to see if it can handle backend database management, so that I can assess if he's eligible for a position NoSQL databases.
 
-2. As an assessor I will judge the website on the totality of looks, documentation, testing, and functions among other things. I will take a particular look at the Javascript portion of the page, so that I can assess his score.
+2. As an assessor I will judge the website on the totality of looks, documentation, testing, and functions among other things. I will take a particular look at the python file so that I can assess his score.
 
-3. As a collaborator I want to see if Johan can be of use in a project, so I want to test Johans game. Additionally I want to scroll through the game.js to eye through the written functions for the game and see Johans familiarity with the language.
+3. As a collaborator I want to see if Johan can be of use in a project, so I want to see Johans website. I will input some personal favourite hero and see if it shows up. Additionally I want to see the repository to evaluate the level of the code.
 
+4. As a fan of roleplaying in Johans roleplay group, I want to update my heroes possessions of gold coins every round we play, because the game-master objected to my gold amount in an earlier game, and I want to show the truth
 
 
 #### II. Wireframes: <a name="UX3"></a>
@@ -54,12 +55,17 @@ The primary target audience are collaborators/employers in the who wish to see m
 * [Wireframes.pdf](assets/wireframes/wireframe.pdf)
 
 
+1. I struggled to come up with an idea for a website, but settled for this kind of character database website that had actually been on my mind for a while.
+    I play roleplay games with a few friends from time to time, and one day I got the idea to make a website like this one.
+    Although I don't see a commercial use as of now, it could be possible if I add a new user database collection with a login layout, so each hero could be connected to a user,
+    who would have the sole privilege of editing his own creations.
+
 1. I think the navbar with the replacing icons for mobile was implemented fine, as not to override the logo which switches to middle position on small screens.
 
-2. The slider is a materialize component, and presents my website with images and small captions trying to explain the websites purpose
+2. The slider is a materialize component, and presents my website with images and captions explaining the purpose of the website
 
 3. The cards are sorted as 2 in every row for large screens and 1 every row for small screens, a change from the 3 as shown in the wireframes.
-    I felt that the content was too crowded for each card so I changed it to 2
+    I felt that the content was too crowded for 3 so I changed it.
 
 4. Materialize framework was used to achieve responsiveness
 
@@ -69,17 +75,13 @@ The primary target audience are collaborators/employers in the who wish to see m
 
 #### III. Development Process: <a name="UX4"></a>
 
-* I struggled initially to understand how to begin writing Javascript on my own. So I began researching until I settled for a simpler type of space shooter game. I watched many videos and tried followed along as they coded nonsense before my tiring eyes, and it didn't make much sense at all.
-* However small increments of experience came ticking in as I tried modifying the code myself, and then some tides of progress blossomed and instilled a great feeling of pride, and so I was on my way to my own project.
+* I started by using some material from earlier pymongo projects we already developed, particularly the task manager project.
 
-* Finding a control scheme gave a nice inspiration boost, adding new triggers became easy, however to make functional loops for pushed HTML was harder.
+* I added a fourth link for the add_adventure template just as for creating heroes
 
 * Every object in my project uses at least 2 functions, a template literal push and a movement increment. Movement increment was easy, however the pushing was difficult because of unfamiliarity with template literals.
 
 * The moveAliens function took some time to learn how to move the whole array with a for loop, and not just single aliens. An if switch statement was later added to change directions as they touch the game boundaries.
-
-* I use only for loops and if conditions in this project, as well as one switch. For loops are needed to iterate through the arrays, and if conditions are essential for every condition in the game.
-* I didn't use other loops because I don't understand when the other loops (when) and (while) are superior yet.
 
 * I learned alot during the development of this project, I had to read up on W3C articles everyday and I saw many youtube tutorials on similar projects, it has been a learning experience.
 
@@ -90,18 +92,14 @@ The primary target audience are collaborators/employers in the who wish to see m
 
 ## 2. Features <a name="Features"></a>
 
-* The website is an online storage of heroes relating to role-play gamers who meet from time to time to play through an adventure that one friend will be the storyteller of and also act as game-master (judge).
-Upon completion of an adventure updating is needed for the heroes equipment and experiences, and this is what the website provides
+* The website is an online storage of heroes for role-play gamers who meet from time to time to play through an adventure that one friend will be the storyteller of.
+Upon completion of an adventure updating is needed for the heroes equipment and experience, and this is what the website is providing.
 
-* The player must destroy 8 Aliens with his spaceship equipped with 2 types of weaponry while avoiding Alien energybombs,
-* And he must do so before the aliens reach the left side of the screen.
+* 2 Collections were created in MongoDB in anticipation of the development project, originally I had less content per collection but I added some different aspects of each hero.
 
-* The spaceship is controllable with arrows Up, Right, Down and Left, as well as Space for a rocket weapon and Ctrl for a laser cannon.
+* Heroes can be read, edited and deleted from the front page, another tab in the Nav leads to the add hero page which presents a form to insert a new hero into the database
 
-* The two weapons have different properties, the rocket image has slightly wider and higher css rules and so has a higher chance to trigger the collisionDetection function,
-* and to imitate splash damage the rocket splices 2 alien out of the aliens array-object, however the laser cannon particles travel faster across the screen and is easier to hit the aliens with.
-
-* Start game menu shows the game title and a start game button, the start game button is animated via css and uses an .on("click") event to initialize the game via jQuery
+* Similarly Adventures can be read, edited and deleted from its' own link in the Nav, and similarly to add a new adventure you have to go to the Add adventure link
 
 * As all aliens are destroyed, an alert is made to notify the player of the Win Game, and a location.reload() repopulates the game with aliens
 
