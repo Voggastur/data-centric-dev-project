@@ -7,9 +7,10 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<!-- Fontawesome Icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Special+Elite&display=swap"
-		rel="stylesheet" />
+	<!-- Google Fonts 'Grenze Gotisch', 'Special Elite', 'Roboto' -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300;500;600&family=Roboto:wght@300;500&family=Special+Elite&display=swap"
+		rel="stylesheet">
 	<!-- My shortcut icon -->
 	<link rel="shortcut icon" type="image/jpg" href="{{url_for('static', filename='images/favicon.ico')}}" />
 	<!-- Materialize CSS -->
@@ -75,8 +76,8 @@
 				<img src="{{ url_for('static', filename='images/adventurer_team.jpg') }}" alt="Imposing band of heroes">
 				<div class="caption center-align">
 
-					<h2 class="heading1 grey-text text-lighten-3">Hero Set, home of roleplay characters</h2>
-					<h5 class="heading2 grey-text text-lighten-3 hide-on-small-only">Create your heroes ahead of
+					<h2 class="caption1 grey-text text-lighten-3">Hero Set, home of roleplay characters</h2>
+					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Create your heroes ahead of
 						your
 						adventures</h5>
 				</div>
@@ -84,28 +85,33 @@
 			<li>
 				<img src="{{ url_for('static', filename='images/tavern.jpg') }}" alt="Characters sitting around in a medieval tavern">
 				<div class="caption right-align">
-					<h2 class="heading1 grey-text text-lighten-3">Forgot arrows for your longbow?
+					<h2 class="caption1 grey-text text-lighten-3">Forgot arrows for your longbow?
 					</h2>
-					<h5 class="heading2 grey-text text-lighten-3 hide-on-small-only">Plan ahead with guidance from
+					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Plan ahead with guidance from
 						your
 						dungeon master, and discuss with your team</h5>
 				</div>
 			</li>
 			<li>
-				<img src="{{ url_for('static', filename='images/hero_travel.jpg') }}" alt="Group of heroes">
+				<img src="{{ url_for('static', filename='images/hero_travel.jpg') }}" alt="Caravan in desert, travelling away from city">
 				<div class="caption left-align">
-					<h2 class="heading1 grey-text text-lighten-3">Safely Stored at MongoDB</h2>
-					<h5 class="heading2 grey-text text-lighten-3 hide-on-small-only">Proudly update your heroes as time goes by</h5>
+					<h2 class="caption1 grey-text text-lighten-3">Safely Stored at MongoDB</h2>
+					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Update your heroes progress as time
+						goes by</h5>
 				</div>
 			</li>
 		</ul>
 	</section>
 
-	<hr class="divider">
-
-	<main>
+	<section class="linear-gradients jinja-section center">
 		{% block content %} {% endblock %}
-	</main>
+	</section>
+
+	<!-- Footer -->
+	<footer class="the-real-footer blue-grey darken-2 grey-text text-lighten-2 valign-wrapper">
+		<p class="flow-text">HeroesDB 2020</p>
+	</footer>
+
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.5.0.min.js"
 		integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
