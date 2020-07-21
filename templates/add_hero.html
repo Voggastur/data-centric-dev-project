@@ -1,75 +1,95 @@
 {% extends 'base.html' %} {% block content %}
-<header class="jinja-header">
-	<h1>Add new hero</h1>
-</header>
 
+<h1>{{ view_header }}</h1>
 <div class="container">
-	<div class="row">
-		<form action="{{ url_for('insert_hero') }}" method="POST" class="col s8 offset-s2 blue-grey darken-2 form">
-			<div class="row">
-				<div class="input-field col s12">
-					<select id="adventure" name="adventure_name">
-                    <option value="" disabled selected>Pick your Adventure</option>
-                    {% for adventure in adventures %}
-                    <option value="{{adventure.adventure_name}}">{{adventure.adventure_name}}</option>
-                    {% endfor %}
-                    </select>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12 center">
-					<input id="hero_name" name="hero_name" type="text" />
-					<label for="hero_name"><i class="fas fa-pen"></i> Hero name</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12 center">
-					<input id="weapon" name="weapon" type="text" />
-					<label for="weapon">
-          <i class="fas fa-fist-raised"></i> Hero weapon</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="armor" name="armor" type="text" />
-					<label for="armor"> <i class="fas fa-shield-alt"></i> Hero armor</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="race" name="race" type="text" />
-					<label for="race"> <i class="fas fa-user"></i> Hero race</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="profession" name="profession" type="text" />
-					<label for="profession">
-          <i class="fas fa-wrench"></i> Hero profession</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="mount" name="mount" type="text" />
-					<label for="mount"> <i class="fas fa-horse"></i> Hero mount</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="home" name="home" type="text" />
-					<label for="home"> <i class="fas fa-home"></i> Hero home</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12">
-					<textarea data-length="140" name="possessions" id="possessions" class="materialize-textarea"></textarea>
-					<label for="possessions"><i class="fas fa-shopping-bag"></i> Hero possessions</label>
-				</div>
-			</div>
-			<footer class="button-wrap col s12 center">
-				<button class="btn waves-effect submit_button" type="submit" name="action"><i class="fas fa-envelope"></i> Submit Hero</button>
-			</footer>
-		</form>
-	</div>
+  <div class="row">
+    <form
+      action="{{ url_for('insert_hero') }}"
+      method="POST"
+      class="col s8 offset-s2 blue-grey darken-2 form"
+    >
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="adventure" name="adventure_name">
+            <option value="" disabled selected>Pick your adventure</option>
+            {% for adventure in adventures %}
+            <option value="{{adventure.adventure_name}}"
+              >{{adventure.adventure_name}}</option
+            >
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 center">
+          <input id="hero_name" name="hero_name" type="text" />
+          <label for="hero_name"><i class="fas fa-pen"></i> Hero name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 center">
+          <input id="weapon" name="weapon" type="text" />
+          <label for="weapon">
+            <i class="fas fa-fist-raised"></i> Hero weapon</label
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="armor" name="armor" type="text" />
+          <label for="armor">
+            <i class="fas fa-shield-alt"></i> Hero armor</label
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="race" name="race" type="text" />
+          <label for="race"> <i class="fas fa-user"></i> Hero race</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="profession" name="profession" type="text" />
+          <label for="profession">
+            <i class="fas fa-wrench"></i> Hero profession</label
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="mount" name="mount" type="text" />
+          <label for="mount"> <i class="fas fa-horse"></i> Hero mount</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="home" name="home" type="text" />
+          <label for="home"> <i class="fas fa-home"></i> Hero home</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea
+            name="possessions"
+            id="possessions"
+            class="materialize-textarea"
+          ></textarea>
+          <label for="possessions"
+            ><i class="fas fa-shopping-bag"></i> Hero possessions</label
+          >
+        </div>
+      </div>
+      <footer class="button-wrap col s12 center">
+        <button
+          class="btn waves-effect submit_button"
+          type="submit"
+          name="action"
+        >
+          <i class="fas fa-envelope"></i> Submit Hero
+        </button>
+      </footer>
+    </form>
+  </div>
 </div>
 {% endblock %}
