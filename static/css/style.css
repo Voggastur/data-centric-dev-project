@@ -43,6 +43,7 @@
 }
 
 .jinja-section {
+  /* Block content imported into this section */
   text-align: center;
   text-decoration: underline;
   padding-top: 20px;
@@ -89,13 +90,12 @@
   float: left;
   height: 100%;
   width: 18%;
-  top: 0;
   left: 0;
-  bottom: 0;
   padding: 0;
 }
 
 .collapsible {
+  /* Negating effects of Materialize css (Since a parent has a border-box) */
   border: none;
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
@@ -105,6 +105,7 @@
 
 .collapsible-header,
 .collapsible-body {
+  /* Border styles are negating Materialize css */
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -124,26 +125,40 @@
 }
 
 .header-content h4 {
-  font-size: 18px;
-  float: right;
+  font-size: 0.9em;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  float: left;
+  width: 75%;
+  line-height: 2;
+  margin: 0px;
+  margin-top: 5px;
+  margin-right: 10px;
+  padding: 0;
+}
+
+.header-content h4 i,
+.header-content h4 span {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
 }
 
 .card-text {
-  font-weight: 300;
-  width: 75%;
+  float: left;
+  font-size: 0.9em;
+  width: 70%;
+  text-overflow: ellipsis;
   margin: 6px;
   margin-right: 0;
   padding: 0;
-  text-overflow: ellipsis;
-  font-size: 1.1em;
-  line-height: 2;
 }
 
 .card-text i,
 .card-text span {
+  font-size: 0.9em;
   margin: 0;
   padding: 0;
-  font-size: 1.1em;
 }
 
 .card-action {
@@ -198,24 +213,30 @@
   .brand-logo {
     margin: 0;
   }
-  .header-content h4 {
-    font-size: 14px;
+  .header-content h4,
+  .header-content h4 i,
+  .header-content h4 span {
+    font-size: 0.9em;
+    margin: 0;
   }
   .card-text {
-    font-size: 13px;
+    font-size: 0.8em;
+    line-height: 2;
   }
 }
 
-/* Minimizing brand-logo for the smallest screen size in Google Dev Tools (Galaxy Fold, 284px width), to avoid overriding other nav elements */
+/* Smallest screens, minimizing text for the smallest screen sizes */
 @media screen and (max-width: 400px) {
   .brand-logo {
     margin: 0;
     font-size: 0.7em;
   }
-  .header-content h4 {
-    font-size: 12px;
+  .header-content h4,
+  .header-content h4 i,
+  .header-content h4 span {
+    font-size: 0.8em;
   }
   .card-text {
-    font-size: 11px;
+    font-size: 0.7em;
   }
 }
