@@ -10,7 +10,7 @@ $(document).ready(function () {
   let slider = document.querySelector(".slider");
   M.Slider.init(slider, {
     indicators: false,
-    height: 400,
+    height: 450,
     transition: 500,
     interval: 6000,
   });
