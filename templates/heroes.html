@@ -2,85 +2,77 @@
 
 <h1>{{ view_header }}</h1>
 <div class="container">
-  <div class="row">
-    {% for hero in heroes %}
-    <!-- Hero Card -->
-    <div class="col m5 s8 herocard blue-grey darken-1 grey-text text-lighten-3">
-				    <ul class="collapsible card-items">
-				        <li class="left-align">
-					        <div class="collapsible-header blue-grey darken-1 grey-text text-lighten-3">
-						        <img src="static/images/helmet.png" alt="Helmet - Generic Hero Symbol" class="helmet responsive-img"/>
-						        <div class="header-content">
-                                    <h4 class="truncate card-text">
-						        	<i class="fas fa-pen target visibility"></i><span class="target visibility"> Hero Name:</span>
-						        	{{hero.hero_name}}
-						            </h4>
-						            <h4 class="truncate card-text">
-						        	<i class="fas fa-wrench target visibility"></i><span class="target visibility"> Profession:</span>
-						        	{{hero.profession}}
-						            </h4>
-                                </div>
-					        </div>
-						    <div class="collapsible-body blue-grey darken-1">
-							    <p class="truncate target card-text">
-							    	<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-							    </p>
-							    <p class="truncate target card-text">
-						        	<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
-						        </p>
-						        <p class="truncate target card-text">
-						        	<i class="fas fa-user"></i><span> Race:</span> {{hero.race}}
-						        </p>
-						        <p class="truncate target card-text">
-						        	<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
-						        </p>
-						        <p class="truncate target card-text">
-						        	<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
-						        </p>
-						        <p class="truncate target card-text">
-						        	<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-						        </p>
-						        <p class="truncate card-text">
-						        	<i class="fas fa-chess-rook"></i><span> Adventure:</span>
-						        	{{hero.adventure_name}}
-						        </p>
-						    </div>
-					    </li>
-				    </ul>
-      <!-- Hero Card Footer -->
-      <div class="card-action center-align">
-        <a
-          href="{{url_for('edit_hero', hero_id=hero._id)}}"
-          class="waves-effect btn green"
-          ><i class="fas fa-user-edit"></i> Edit
-        </a>
-        <a href="#{{hero.hero_name}}" class="waves-effect btn red modal-trigger"
-          ><i class="fas fa-user-minus"></i> Delete</a
-        >
-        <!-- Modal Structure -->
-        <div
-          id="{{hero.hero_name}}"
-          class="modal blue-grey darken-2 grey-text text-lighten-3"
-        >
-          <div class="modal-content center">
-            <h4>Deletion</h4>
-            <p>Are you sure you want to delete {{hero.hero_name}}?</p>
-          </div>
-          <div class="modal-footer blue-grey darken-2 grey-text text-lighten-3">
-            <a href="#" class="modal-close waves-effect btn blue"
-              ><i class="fas fa-undo"></i> Return</a
-            >
-            <a
-              href="{{url_for('delete_hero', hero_id=hero._id)}}"
-              class="modal-close waves-effect btn red"
-              ><i class="fas fa-user-minus"></i> Delete</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Hero Card -->
-    {% endfor %}
-  </div>
+	<div class="row">
+		{% for hero in heroes %}
+		<!-- Hero Card -->
+		<div class="col l5 push-l1 pull-l1 s10 offset-s1 herocard blue-grey darken-1 grey-text text-lighten-3">
+			<ul class="collapsible card-items">
+				<li class="left-align">
+					<div class="collapsible-header blue-grey darken-1 grey-text text-lighten-3">
+						<div class="header-content">
+							<div class="helmet valign-wrapper">
+								<img src="{{ url_for('static', filename='images/helmet.png') }}" alt="Helmet - Generic Hero Symbol" class="responsive-img"/></img>
+							</div>
+							<h4>
+								<i class="fas fa-pen target"></i><span class="target"> Hero Name:</span>
+								{{hero.hero_name}}
+							</h4>
+							<h4>
+								<i class="fas fa-user target"></i><span class="target"> Race:</span> {{hero.race}}
+							</h4>
+							<h4>
+								<i class="fas fa-wrench target"></i><span class="target"> Profession:</span>
+								{{hero.profession}}
+							</h4>
+						</div>
+					</div>
+					<div class="collapsible-body blue-grey darken-1">
+						<p class="card-text">
+							<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
+						</p>
+						<p class="card-text">
+							<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
+						</p>
+						<p class="card-text">
+							<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+						</p>
+						<p class="card-text">
+							<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
+						</p>
+						<p class="card-text">
+							<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
+						</p>
+						<p class="card-text">
+							<i class="fas fa-chess-rook"></i><span> Adventure:</span>
+							{{hero.adventure_name}}
+						</p>
+					</div>
+				</li>
+			</ul>
+			<!-- Hero Card Footer -->
+			<div class="card-action center-align">
+				<a href="{{url_for('edit_hero', hero_id=hero._id)}}"
+					class="waves-effect btn green"><i class="fas fa-user-edit"></i> Edit
+				</a>
+				<a href="#{{hero.hero_name}}"
+					class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i> Delete</a>
+				<!-- Modal Structure -->
+				<div id="{{hero.hero_name}}" class="modal blue-grey darken-2 grey-text text-lighten-3">
+					<div class="modal-content center">
+						<h4>{{hero.hero_name}}</h4>
+						<p>Are you sure you want to delete this hero?</p>
+					</div>
+					<div class="modal-footer blue-grey darken-2 grey-text text-lighten-3">
+						<a href="{{url_for('get_heroes')}}"
+							class="modal-close waves-effect btn blue"><i class="fas fa-undo"></i> Return</a>
+						<a href="{{url_for('delete_hero', hero_id=hero._id)}}"
+							class="modal-close waves-effect btn red"><i class="fas fa-user-minus"></i> Delete</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Hero Card -->
+		{% endfor %}
+	</div>
 </div>
 {% endblock %}
