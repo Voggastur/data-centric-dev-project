@@ -42,15 +42,6 @@
   );
 }
 
-.linear-gradient2 {
-  background: repeating-linear-gradient(
-    0.15turn,
-    #f0f4c3,
-    #9c98dd 35%,
-    #f0f4c3 65%
-  );
-}
-
 .jinja-section {
   text-align: center;
   text-decoration: underline;
