@@ -33,10 +33,22 @@
   text-shadow: 1px 1px #aaa;
 }
 
-.linear-gradients {
-  background: linear-gradient(217deg, #ff0000cc, #ff000000 40%),
-    linear-gradient(127deg, #00ff00cc, #00ff0000 40%),
-    linear-gradient(336deg, #0000ffcc, #0000ff00 40%);
+.linear-gradient {
+  background: repeating-linear-gradient(
+    0.35turn,
+    #f0f4c3,
+    #9c98dd 35%,
+    #f0f4c3 65%
+  );
+}
+
+.linear-gradient2 {
+  background: repeating-linear-gradient(
+    0.15turn,
+    #f0f4c3,
+    #9c98dd 35%,
+    #f0f4c3 65%
+  );
 }
 
 .jinja-section {
@@ -62,7 +74,7 @@
 /* Hero Cards */
 
 .container .row {
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .herocard {
@@ -78,22 +90,18 @@
   box-shadow: 8px 8px 30px 4px rgba(85, 85, 85, 1);
 }
 
-.card-items {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-}
-
-.card-items:hover {
+.hero-card ul {
   cursor: pointer;
 }
 
-.helmet {
-  margin: 0;
+.header-content .helmet {
+  float: left;
+  height: 100%;
+  width: 18%;
+  top: 0;
+  left: 0;
+  bottom: 0;
   padding: 0;
-  display: block;
-  position: static;
-  max-width: 75px;
-  max-height: 75px;
 }
 
 .collapsible {
@@ -106,6 +114,11 @@
 
 .collapsible-header,
 .collapsible-body {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
   position: relative;
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
@@ -113,24 +126,40 @@
   box-shadow: 0px 0px 0px 0px #000;
 }
 
-.card-text {
-  margin-left: 6px;
-  display: block;
-  text-overflow: ellipsis;
+.header-content {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.header-content h4 {
   font-size: 18px;
-  line-height: 1.6;
+  float: right;
+}
+
+.card-text {
+  font-weight: 300;
+  width: 75%;
+  margin: 6px;
+  margin-right: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+  font-size: 1.1em;
+  line-height: 2;
+}
+
+.card-text i,
+.card-text span {
+  margin: 0;
+  padding: 0;
+  font-size: 1.1em;
 }
 
 .card-action {
   padding-bottom: 5px;
 }
 
-.visibility {
-  visibility: hidden;
-  position: absolute;
-}
-
-/* Card-Footer (.card-action) */
+/* Card-Footer */
 
 .button-wrap {
   width: 100%;
@@ -142,18 +171,9 @@
   margin: 0 auto;
 }
 
-/* jQuery .addClass on card click */
-
-.transform-text {
-  font-size: 0.8em;
-  line-height: 1.1;
-  color: red;
-}
-
 /* Modal */
 
 .modal {
-  font-family: "Special Elite", cursive;
   padding: 1px;
 }
 
@@ -179,10 +199,6 @@
   font-size: 2.5em;
 }
 
-/* Large screens */
-@media screen and (min-width: 600px) {
-}
-
 /* Small screens */
 @media screen and (max-width: 600px) {
   .caption1 {
@@ -191,12 +207,24 @@
   .brand-logo {
     margin: 0;
   }
+  .header-content h4 {
+    font-size: 14px;
+  }
+  .card-text {
+    font-size: 13px;
+  }
 }
 
 /* Minimizing brand-logo for the smallest screen size in Google Dev Tools (Galaxy Fold, 284px width), to avoid overriding other nav elements */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 400px) {
   .brand-logo {
     margin: 0;
     font-size: 0.7em;
+  }
+  .header-content h4 {
+    font-size: 12px;
+  }
+  .card-text {
+    font-size: 11px;
   }
 }
