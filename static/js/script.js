@@ -5,12 +5,12 @@ $(document).ready(function () {
   $(".modal").modal();
   $(".collapsible").collapsible();
   // Hide header spans
-  $("h4.card-text .target").hide();
+  // $(".target").hide();
   // Materialize slider function
   let slider = document.querySelector(".slider");
   M.Slider.init(slider, {
     indicators: false,
-    height: 450,
+    height: 500,
     transition: 500,
     interval: 6000,
   });
