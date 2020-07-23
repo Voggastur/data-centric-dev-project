@@ -2,14 +2,28 @@
 
 * {
   font-family: "Special Elite", cursive;
+}
+
+.link-text {
+  font-size: 1.2em;
+  font-weight: 300;
   margin: 0;
-  padding: 0;
+  margin-right: 2px;
+  padding: 10px;
+  padding-top: 5px;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
 }
 
 .link-text i,
-.link-text span,
-.brand-logo {
-  font-size: 1.3em;
+.link-text span {
+  font-size: 1.2em;
+  margin: 0;
+  margin-right: 2px;
+  -webkit-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
 .brand-logo {
@@ -34,6 +48,12 @@
 }
 
 .linear-gradient {
+  background: -o-repeating-linear-gradient(
+    324deg,
+    #f0f4c3,
+    #9c98dd 35%,
+    #f0f4c3 65%
+  );
   background: repeating-linear-gradient(
     0.35turn,
     #f0f4c3,
@@ -42,8 +62,8 @@
   );
 }
 
+/* Block content imported into this section */
 .jinja-section {
-  /* Block content imported into this section */
   text-align: center;
   text-decoration: underline;
   padding-top: 20px;
@@ -66,19 +86,21 @@
 /* Hero Cards */
 
 .container .row {
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .herocard {
   margin: 20px;
   padding-bottom: 5px;
   border-radius: 8px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .herocard:hover {
   -webkit-box-shadow: 8px 8px 30px 4px rgba(85, 85, 85, 1);
-  -moz-box-shadow: 8px 8px 30px 4px rgba(85, 85, 85, 1);
   box-shadow: 8px 8px 30px 4px rgba(85, 85, 85, 1);
 }
 
@@ -86,36 +108,30 @@
   cursor: pointer;
 }
 
-.header-content .helmet {
-  float: left;
-  height: 100%;
-  width: 18%;
-  left: 0;
-  padding: 0;
-}
-
+/* Negating effects of Materialize css (Since a parent has a border-box) */
 .collapsible {
-  /* Negating effects of Materialize css (Since a parent has a border-box) */
   border: none;
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
-  -moz-box-shadow: 0px 0px 0px 0px #000;
   box-shadow: 0px 0px 0px 0px #000;
 }
 
+/* Border styles are negating Materialize css */
 .collapsible-header,
 .collapsible-body {
-  /* Border styles are negating Materialize css */
   width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 0;
-  padding-right: 0;
-  position: relative;
+  padding: 5px;
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
-  -moz-box-shadow: 0px 0px 0px 0px #000;
   box-shadow: 0px 0px 0px 0px #000;
+}
+
+.herocard h2 {
+    font-size: 2.3em;
+}
+
+.herocard p {
+    font-size: 1.1em;
 }
 
 .header-content {
@@ -124,33 +140,44 @@
   padding-bottom: 5px;
 }
 
+/* Helmet container */
+.header-content .helmet {
+  float: left;
+  height: 100%;
+  width: 18%;
+  left: 0;
+  padding: 0;
+}
+
+/* h4 next to Helmet */
 .header-content h4 {
-  font-size: 0.9em;
+  font-size: 1.1em;
   font-weight: 300;
-  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
   float: left;
   width: 75%;
-  line-height: 2;
+  line-height: 1.5;
   margin: 0px;
-  margin-top: 5px;
   margin-right: 10px;
   padding: 0;
 }
 
 .header-content h4 i,
 .header-content h4 span {
-  font-size: 0.9em;
+  font-size: 1em;
   margin: 0;
   padding: 0;
 }
 
 .card-text {
-  float: left;
   font-size: 0.9em;
+  line-height: 1.5;
   width: 70%;
-  text-overflow: ellipsis;
-  margin: 6px;
-  margin-right: 0;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  margin: 0;
+  margin-right: 10px;
   padding: 0;
 }
 
@@ -161,20 +188,10 @@
   padding: 0;
 }
 
-.card-action {
-  padding-bottom: 5px;
-}
-
 /* Card-Footer */
 
-.button-wrap {
-  width: 100%;
-  padding: 5px;
-}
-
-.button-wrap button {
-  display: block;
-  margin: 0 auto;
+.card-action {
+  padding-bottom: 5px;
 }
 
 /* Modal */
@@ -205,23 +222,34 @@
   font-size: 2.5em;
 }
 
+/* Medium screens below 992 */
+@media screen and (max-width: 992px) {
+}
+
 /* Small screens */
 @media screen and (max-width: 600px) {
+  .link-text,
+  .link-text i,
+  .link-text span {
+    font-size: 1.2em;
+  }
+
   .caption1 {
     font-size: 3.6em;
   }
+
   .brand-logo {
     margin: 0;
   }
+
   .header-content h4,
   .header-content h4 i,
   .header-content h4 span {
     font-size: 0.9em;
-    margin: 0;
   }
+
   .card-text {
     font-size: 0.8em;
-    line-height: 2;
   }
 }
 
@@ -231,11 +259,20 @@
     margin: 0;
     font-size: 0.7em;
   }
+
+  .link-text,
+  .link-text i,
+  .link-text span {
+    padding: 2px;
+    margin-right: 0px;
+  }
+
   .header-content h4,
   .header-content h4 i,
   .header-content h4 span {
     font-size: 0.8em;
   }
+  
   .card-text {
     font-size: 0.7em;
   }
