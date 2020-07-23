@@ -151,7 +151,7 @@
 
 /* h4 next to Helmet */
 .header-content h4 {
-  font-size: 1.1em;
+  font-size: 1.5em;
   font-weight: 300;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
@@ -173,7 +173,7 @@
 .card-text {
   font-size: 0.9em;
   line-height: 1.5;
-  width: 70%;
+  width: 100%;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
   margin: 0;
