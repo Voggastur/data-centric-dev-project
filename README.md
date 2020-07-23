@@ -1,6 +1,6 @@
 # HeroesDB
 
-[Deployed website](https://voggastur.github.io/data-centric-development-project/)
+[Deployed website](https://heroes84.herokuapp.com/)
 [Project Repository](https://github.com/Voggastur/data-centric-dev-project)
 
 The aim of this website is to present my skills in Python Flask and Jinja to present information from a backend database (mongoDB).
@@ -24,8 +24,6 @@ The aim of this website is to present my skills in Python Flask and Jinja to pre
     I. [Testing functionality](#Testing2)
     
     II. [Testing user stories](#Testing3)
-
-    III. [Bugs found](#Testing4)
     
 6. [Deployment](#Deployment)
 
@@ -49,12 +47,14 @@ The primary target audience are collaborators/employers who wish to see my knowl
 
 4. As another type of collaborator I want to see if Johan can make use of dynamic content, so I will visit Johans website and try to add some content.
 
-5. As a fan of roleplaying in Johans roleplay group, I want to update my heroes possessions of gold coins every round we play, because the game-master objected to my gold amount in an earlier game.
+5. As a fan of roleplaying in Johans roleplay group, I want to update my heroes possessions of gold coins every round we play, because the game-master objected to my amount of gold in an earlier game.
 
 
 #### II. Wireframes: <a name="UX3"></a>
 
-* [Wireframes.pdf](assets/wireframes/wireframe.pdf)
+* [Wireframes.pdf](wireframes/wireframes(mobile_desktop).pdf)
+
+* [DBschema.pdf](wireframes/DBschema.pdf)
 
 
 1. Initially I struggled to come up with an idea for a website, but settled on a character database that had actually been on my mind for a while.
@@ -148,6 +148,7 @@ Upon completion of an adventure updating is needed for the heroes equipment and 
 
 * PEP8 Python Validator
 
+
 ## 5. Testing <a name="Testing"></a>
 
 #### I. Testing Functionality <a name="Testing2"></a>
@@ -157,6 +158,7 @@ Upon completion of an adventure updating is needed for the heroes equipment and 
 3. I have validated the HTML code with [W3C HTML Validator](https://validator.w3.org)
 4. I have validated the CSS code with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 5. I added vendor prefixes to my css with the help of [Autoprefixer](https://autoprefixer.github.io/)
+
 
 #### II. User stories testing <a name="Testing3"></a>
 
@@ -211,7 +213,6 @@ The following process was used to deploy the project:
 
 
 ## 7. Credits <a name="Credits"></a>
-
 
 * The slider images and the helmet picture was taken from a free library on google search.
 
