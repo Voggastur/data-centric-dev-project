@@ -9,8 +9,7 @@ if path.exists("env.py"):
 
 app = Flask(__name__)
 
-
-# My DB on MongoDB
+# My environment variables
 app.config["MONGO_DBNAME"] = 'adventurers'
 # SECRET_KEY variable
 app.config["MONGO_URI"] = os.environ.get('SECRET_KEY')
@@ -21,7 +20,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_heroes')
 def get_heroes():
-    return render_template("heroes.html",
+    return render_template("heroes.html", view_header="Heroes",
                            heroes=mongo.db.heroes.find(),
                            adventures=mongo.db.adventures.find())
 
@@ -29,6 +28,7 @@ def get_heroes():
 @app.route('/add_hero')
 def add_hero():
     return render_template('add_hero.html',
+                           view_header="Create Hero",
                            heroes=mongo.db.heroes.find(),
                            adventures=mongo.db.adventures.find())
 
@@ -44,7 +44,9 @@ def insert_hero():
 def edit_hero(hero_id):
     the_hero = mongo.db.heroes.find_one({"_id": ObjectId(hero_id)})
     all_adventures = mongo.db.adventures.find()
-    return render_template('edit_hero.html', hero=the_hero,
+    return render_template('edit_hero.html',
+                           view_header="Edit Hero",
+                           hero=the_hero,
                            adventures=all_adventures)
 
 
@@ -53,16 +55,16 @@ def update_hero(hero_id):
     heroes = mongo.db.heroes
     heroes.update({'_id': ObjectId(hero_id)},
                   {
-        'adventure_name': request.form.get('adventure_name'),
         'hero_name': request.form.get('hero_name'),
         'weapon': request.form.get('weapon'),
         'armor': request.form.get('armor'),
+        'race': request.form.get('race'),
         'profession': request.form.get('profession'),
         'mount': request.form.get('mount'),
-        'possessions': request.form.get('possessions'),
         'home': request.form.get('home'),
-        'race': request.form.get('race'),
-    })
+        'possessions': request.form.get('possessions'),
+        'adventure_name': request.form.get('adventure_name')
+                  })
     return redirect(url_for('get_heroes'))
 
 
@@ -74,7 +76,7 @@ def delete_hero(hero_id):
 
 @app.route('/get_adventure')
 def get_adventure():
-    return render_template('adventure.html',
+    return render_template('adventure.html', view_header="Adventures",
                            adventures=mongo.db.adventures.find())
 
 
@@ -88,15 +90,19 @@ def delete_adventure(adventure_id):
 def edit_adventure(adventure_id):
     the_adventure = mongo.db.adventures.find_one(
         {"_id": ObjectId(adventure_id)})
-    return render_template('edit_adventure.html', adventure=the_adventure)
+    return render_template('edit_adventure.html',
+                           view_header="Edit Adventure",
+                           adventure=the_adventure)
 
 
 @app.route('/update_adventure/<adventure_id>', methods=['POST'])
 def update_adventure(adventure_id):
-    mongo.db.adventures.update(
-        {'_id': ObjectId(adventure_id)},
-        {'adventure_name': request.form.get('adventure_name')},
-        {'adventure_topic': request.form.get('adventure_topic')})
+    adventures = mongo.db.adventures
+    adventures.update({'_id': ObjectId(adventure_id)},
+                      {
+        'adventure_name': request.form.get('adventure_name'),
+        'adventure_topic': request.form.get('adventure_topic')
+                      })
     return redirect(url_for('get_adventure'))
 
 
@@ -110,6 +116,7 @@ def insert_adventure():
 @app.route('/add_adventure')
 def add_adventure():
     return render_template('add_adventure.html',
+                           view_header="Add Adventure",
                            adventures=mongo.db.adventures.find())
 
 
