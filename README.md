@@ -154,7 +154,7 @@ Upon completion of an adventure updating is needed for the heroes equipment and 
 #### I. Testing Functionality <a name="Testing2"></a>
 
 1. Testing was done manually throughout development.
-2. I have validated the Python code with http://pep8online.com/checkresult
+2. I have validated the Python code with [PEP8 Validator](http://pep8online.com/)
 3. I have validated the HTML code with [W3C HTML Validator](https://validator.w3.org)
 4. I have validated the CSS code with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 5. I added vendor prefixes to my css with the help of [Autoprefixer](https://autoprefixer.github.io/)
@@ -194,7 +194,7 @@ Upon completion of an adventure updating is needed for the heroes equipment and 
 ## 6. Deployment <a name="Deployment"></a>
 
 This project was developed in Gitpod.
-The project has been deployed to Heroku Pages - [Deployed Website](https://voggastur.github.io/data-centric-dev-project/)
+The project has been deployed to Heroku Pages - [Deployed Website](https://heroes84.herokuapp.com/)
 The repository for this website can be found at this GitHub link: [Data Centric Repository](https://github.com/Voggastur/data-centric-dev-project)
 
 The following process was used to deploy the project:
@@ -204,12 +204,12 @@ The following process was used to deploy the project:
 4. Open gitpod
 5. Create requirements.txt file with $ pip3 freeze --local > requirements.txt
 6. Create Procfile, open it and add: web: python app.py
-7. git add requirements.txt, git add Procfile
-8. git commit -m "Added requirements.txt and Procfile"
+7. $ git add requirements.txt, git add Procfile
+8. $ git commit -m "Added requirements.txt and Procfile"
 9. Login into heroku via the git CLI with $ heroku login
 10. Add remote repo to git repo with: $ heroku git:remote -a heroes84
 11. Push git repo to heroku: $ git push -u heroku master
-12. Retrieve link from push message https://heroes84.herokuapp.com/
+12. Retrieve link from the push message https://heroes84.herokuapp.com/
 
 
 ## 7. Credits <a name="Credits"></a>
