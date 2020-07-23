@@ -205,7 +205,7 @@ The following process was used to deploy the project:
 7. git add requirements.txt, git add Procfile
 8. git commit -m "Added requirements.txt and Procfile"
 9. Login into heroku via the git CLI with $ heroku login
-10. Add remote repo to git repo with: $ git remote add heroku https://heroes84.herokuapp.com/
+10. Add remote repo to git repo with: $ heroku git:remote -a heroes84
 11. Push git repo to heroku: $ git push -u heroku master
 12. Retrieve link from push message https://heroes84.herokuapp.com/
 
