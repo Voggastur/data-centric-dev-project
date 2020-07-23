@@ -88,6 +88,7 @@ The primary target audience are collaborators/employers who wish to see my knowl
 1. Recreate the env.py file with my SECRET_KEY variable in it.
 2. pip3 install -r requirements.txt ( to install python dependencies ).
 3. python3 app.py ( to get a fullscreen preview window ).
+And I always tried to leave the project in a functioning manner, but this was not always true for the python file, as I tried to import flash at one point but ended up being unable to update collections.
 
 
 ## 2. Features <a name="Features"></a>
@@ -112,7 +113,7 @@ Upon completion of an adventure updating is needed for the heroes equipment and 
 
 * A user implementation would also mean some kind of login page, with encrypted password management, which would check against the password field
 
-* Numericals for strength, perception, endurance, charisma, intelligence, agility, luck should be added in the future, there would be a max numeral available to distribute among these attributes.
+* Numericals for typical roleplay attributes such as strength, perception, endurance, charisma, intelligence, agility, luck should be added in the future, there would be a max numeral available to distribute among these attributes.
 
 
 ## 4. Technologies used <a name="Technologies"></a>
@@ -145,20 +146,17 @@ Upon completion of an adventure updating is needed for the heroes equipment and 
 
 * Autoprefixer
 
-* Free Formatter
-
+* PEP8 Python Validator
 
 ## 5. Testing <a name="Testing"></a>
 
 #### I. Testing Functionality <a name="Testing2"></a>
 
 1. Testing was done manually throughout development.
-2. I have added a Jasmine test suite which does checks against my functions, objects, numbers and variables.
-3. I have run the HTML code through [W3C HTML Validator](https://validator.w3.org) to validate the code.
-4. I have run the CSS code through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate the code.
-5. I formatted the HTML code through the use of [Free Formatter](www.freeformatter.com/html-formatter.html)
-6. I added vendor prefixes to my css through the help of [Autoprefixer](https://autoprefixer.github.io/)
-
+2. I have validated the Python code with http://pep8online.com/checkresult
+3. I have validated the HTML code with [W3C HTML Validator](https://validator.w3.org)
+4. I have validated the CSS code with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+5. I added vendor prefixes to my css with the help of [Autoprefixer](https://autoprefixer.github.io/)
 
 #### II. User stories testing <a name="Testing3"></a>
 
@@ -188,6 +186,7 @@ Upon completion of an adventure updating is needed for the heroes equipment and 
 
     * Firstly I click the add adventure link to add context for the hero I am about to enter.
     * Secondly using paper sheets from the last roleplay session, I enter information about my hero. I make sure to add the 7 silver coins I made hunting rabbits in the last game into my possessions.
+    * I check that my new hero appears at the bottom of the list of heroes
 
 
 ## 6. Deployment <a name="Deployment"></a>
@@ -197,25 +196,18 @@ The project has been deployed to Heroku Pages - [Deployed Website](https://vogga
 The repository for this website can be found at this GitHub link: [Data Centric Repository](https://github.com/Voggastur/data-centric-dev-project)
 
 The following process was used to deploy the project:
-1. Log into GitHub.
-2. Select Voggastur/data-centric-dev-project
-3. Select settings
-4. Scroll down to Github Pages
-5. Select Source: master branch
-6. Retrieve the link to the deployed website
-
-### How to clone this project locally <a name="Deployment2"></a>
-​
-To clone this project from GitHub:
-1. At the top of this repository, click the green button **Clone or download**.
-2. In the Clone with HTTPs section, copy the clone URL for the repository. 
-3. Open your favourite terminal (cmd, powershell, bash, git bash, etc.)
-4. Change the current working directory to the location where you want the cloned directory to be made.
-5. Type `git clone`, and then paste the URL you copied in Step 2.
-```console
-git clone https://github.com/Voggastur/interactive-frontend-project
-```
-6. Press Enter. Your local clone will be created.
+1. Create an app on Heroku webpage with name Heroes84
+2. Go to Github webpage and log in
+3. Select Voggastur/data-centric-dev-project
+4. Open gitpod
+5. Create requirements.txt file with $ pip3 freeze --local > requirements.txt
+6. Create Procfile, open it and add: web: python app.py
+7. git add requirements.txt, git add Procfile
+8. git commit -m "Added requirements.txt and Procfile"
+9. Login into heroku via the git CLI with $ heroku login
+10. Add remote repo to git repo with: $ git remote add heroku https://heroes84.herokuapp.com/
+11. Push git repo to heroku: $ git push -u heroku master
+12. Retrieve link from push message https://heroes84.herokuapp.com/
 
 
 ## 7. Credits <a name="Credits"></a>
