@@ -151,7 +151,7 @@
 
 /* h4 next to Helmet */
 .header-content h4 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 300;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
@@ -222,10 +222,6 @@
   font-size: 2.5em;
 }
 
-/* Medium screens below 992 */
-@media screen and (max-width: 992px) {
-}
-
 /* Small screens */
 @media screen and (max-width: 600px) {
   .link-text,
@@ -245,7 +241,7 @@
   .header-content h4,
   .header-content h4 i,
   .header-content h4 span {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 
   .card-text {
