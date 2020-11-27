@@ -5,12 +5,11 @@
 }
 
 .link-text {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: 300;
   margin: 0;
   margin-right: 2px;
-  padding: 10px;
-  padding-top: 5px;
+  padding: 5px 10px;
   -webkit-transition: all 0.1s;
   -o-transition: all 0.1s;
   transition: all 0.1s;
@@ -63,19 +62,15 @@
 }
 
 /* Block content imported into this section */
-.jinja-section {
+.import-section {
   text-align: center;
   text-decoration: underline;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.jinja-section h1 {
+.import-section h1 {
   font-size: 3.4em;
-}
-
-.linear-gradients .row {
-  margin-bottom: 0;
 }
 
 .adv-divider {
@@ -85,14 +80,9 @@
 
 /* Hero Cards */
 
-.container .row {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
 .herocard {
-  margin: 20px;
-  padding-bottom: 5px;
+  margin: 5px;
+  padding: 5px;
   border-radius: 8px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -100,15 +90,15 @@
 }
 
 .herocard:hover {
-  -webkit-box-shadow: 8px 8px 30px 4px rgba(85, 85, 85, 1);
-  box-shadow: 8px 8px 30px 4px rgba(85, 85, 85, 1);
+  -webkit-box-shadow: 3px 3px 10px 4px #555555;
+  box-shadow: 3px 3px 10px 4px #555555;
 }
 
-.hero-card ul {
+.herocard ul {
   cursor: pointer;
 }
 
-/* Negating effects of Materialize css (Since a parent has a border-box) */
+/* Negating borderbox and borders coming from Materialize css (because parent has defined borderbox) */
 .collapsible {
   border: none;
   outline: none;
@@ -116,7 +106,7 @@
   box-shadow: 0px 0px 0px 0px #000;
 }
 
-/* Border styles are negating Materialize css */
+/* Negating borderbox and borders coming from Materialize css (because parent has defined borderbox) */
 .collapsible-header,
 .collapsible-body {
   width: 100%;
@@ -124,14 +114,6 @@
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
   box-shadow: 0px 0px 0px 0px #000;
-}
-
-.herocard h2 {
-    font-size: 2.3em;
-}
-
-.herocard p {
-    font-size: 1.1em;
 }
 
 .header-content {
@@ -154,7 +136,7 @@
   font-size: 1.3em;
   font-weight: 300;
   -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
+  text-overflow: ellipsis;
   float: left;
   width: 75%;
   line-height: 1.5;
@@ -175,7 +157,7 @@
   line-height: 1.5;
   width: 100%;
   -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
+  text-overflow: ellipsis;
   margin: 0;
   margin-right: 10px;
   padding: 0;
@@ -204,19 +186,20 @@
 
 .form {
   padding: 10px;
+  overflow: hidden;
 }
 
-/* Footer */
+/* Different footers */
 
 .adventure-footer {
   padding: 10px 0px;
 }
 
-.the-real-footer {
+.main-page-footer {
   height: 100px;
 }
 
-.the-real-footer p {
+.main-page-footer p {
   display: block;
   margin: 0 auto;
   font-size: 2.5em;
@@ -224,10 +207,12 @@
 
 /* Small screens */
 @media screen and (max-width: 600px) {
-  .link-text,
-  .link-text i,
-  .link-text span {
+  nav ul li a,
+  nav ul li a i,
+  nav ul li a span {
     font-size: 1.2em;
+    margin-right: 0px;
+    padding: 0, 5px;
   }
 
   .caption1 {
@@ -240,12 +225,8 @@
 
   .header-content h4,
   .header-content h4 i,
-  .header-content h4 span {
-    font-size: 1em;
-  }
-
-  .card-text {
-    font-size: 0.8em;
+  .header-content h4 span .card-text {
+    font-size: 0.9em;
   }
 }
 
@@ -253,23 +234,12 @@
 @media screen and (max-width: 400px) {
   .brand-logo {
     margin: 0;
-    font-size: 0.7em;
-  }
-
-  .link-text,
-  .link-text i,
-  .link-text span {
-    padding: 2px;
-    margin-right: 0px;
+    font-size: 0.8em;
   }
 
   .header-content h4,
   .header-content h4 i,
-  .header-content h4 span {
+  .header-content h4 span .card-text {
     font-size: 0.8em;
-  }
-  
-  .card-text {
-    font-size: 0.7em;
   }
 }
