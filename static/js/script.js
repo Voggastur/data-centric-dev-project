@@ -4,8 +4,6 @@ $(document).ready(function () {
   $("textarea").characterCounter();
   $(".modal").modal();
   $(".collapsible").collapsible();
-  // Hide header spans
-  // $(".target").hide();
   // Materialize slider function
   let slider = document.querySelector(".slider");
   M.Slider.init(slider, {
