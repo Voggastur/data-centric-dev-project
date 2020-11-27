@@ -5,46 +5,42 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<!-- Fontawesome Icons -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="shortcut icon" type="image/jpg" href="{{ url_for('static', filename='images/knight.ico') }}" />
 	<!-- Google Fonts 'Grenze Gotisch', 'Special Elite' -->
 	<link
 		href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300;500&family=Special+Elite&display=swap"
 		rel="stylesheet">
-	<!-- My shortcut icon -->
-	<link rel="shortcut icon" type="image/jpg" href="https://raw.githubusercontent.com/Voggastur/data-centric-dev-project/master/static/images/favicon.ico" />
-	<!-- Materialize CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-	<!-- My CSS -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 	<title>HeroesDB</title>
 </head>
 
 <body>
 	<header>
-		<nav class="nav-wrapper blue-grey darken-2">
-			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2 left"> HeroesDB</a>
+		<nav class="nav-wrapper blue-grey darken-1">
+			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-3 left"> HeroesDB</a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
-					<a class="grey-text text-lighten-2 link-text" href="{{url_for('get_heroes')}}">
+					<a class="grey-text text-lighten-3 link-text" href="{{url_for('get_heroes')}}">
 						<i class="fas fa-home"></i>
 						<span>Home</span>
 					</a>
 				</li>
 				<li>
-					<a class="grey-text text-lighten-2 link-text" href="{{url_for('add_hero')}}">
+					<a class="grey-text text-lighten-3 link-text" href="{{url_for('add_hero')}}">
 						<i class="fa fa-user-plus"></i>
 						<span>Create Hero</span>
 					</a>
 				</li>
 				<li>
-					<a class="grey-text text-lighten-2 link-text" href="{{url_for('get_adventure')}}">
+					<a class="grey-text text-lighten-3 link-text" href="{{url_for('get_adventure')}}">
 						<i class="fas fa-chess-rook"></i>
 						<span>Adventures</span>
 					</a>
 				</li>
 				<li>
-					<a class="grey-text text-lighten-2 link-text" href="{{url_for('add_adventure')}}">
+					<a class="grey-text text-lighten-3 link-text" href="{{url_for('add_adventure')}}">
 						<i class="fas fa-plus-circle"></i>
 						<span>Add Adventure</span>
 					</a>
@@ -73,9 +69,8 @@
 	<section class="slider">
 		<ul class="slides">
 			<li>
-				<img src="https://raw.githubusercontent.com/Voggastur/data-centric-dev-project/master/static/images/adventurer_team.jpg" alt="Imposing band of heroes">
+				<img src="{{ url_for('static', filename='images/adventurer_team.jpg') }}" alt="Imposing band of heroes">
 				<div class="caption center-align">
-
 					<h2 class="caption1 grey-text text-lighten-3">HeroesDB, home of roleplay characters</h2>
 					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Create your heroes ahead of
 						your
@@ -83,7 +78,7 @@
 				</div>
 			</li>
 			<li>
-				<img src="https://raw.githubusercontent.com/Voggastur/data-centric-dev-project/master/static/images/tavern.jpg" alt="Characters sitting around in a medieval tavern">
+				<img src="{{ url_for('static', filename='images/tavern.jpg') }}" alt="Characters sitting around in a medieval tavern">
 				<div class="caption right-align">
 					<h2 class="caption1 grey-text text-lighten-3">Ever forgot arrows for your longbow?
 					</h2>
@@ -92,31 +87,28 @@
 				</div>
 			</li>
 			<li>
-				<img src="https://raw.githubusercontent.com/Voggastur/data-centric-dev-project/master/static/images/hero_travel.jpg" alt="Caravan in desert, travelling away from city">
+				<img src="{{ url_for('static', filename='images/hero_travel.jpg') }}" alt="Caravan in desert, travelling away from city">
 				<div class="caption left-align">
 					<h2 class="caption1 grey-text text-lighten-3">Safely Stored at MongoDB</h2>
-					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Update your heroes over time, and add new adventures for the
+					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Update your heroes over time, add new adventures for the
 						future</h5>
 				</div>
 			</li>
 		</ul>
 	</section>
 
-	<section class="linear-gradient jinja-section center">
+	<section class="linear-gradient import-section">
 		{% block content %} {% endblock %}
 	</section>
 
-	<!-- Footer -->
-	<footer class="the-real-footer blue-grey darken-2 grey-text text-lighten-2 valign-wrapper">
+	<!-- Footer, main-page-footer class is needed for my css because other footer elements are present in other places -->
+	<footer class="main-page-footer blue-grey darken-1 grey-text text-lighten-2 valign-wrapper">
 		<p class="flow-text">HeroesDB 2020</p>
 	</footer>
 
-	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.5.0.min.js"
 		integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-	<!-- My Javascript -->
 	<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
-	<!-- Materialize JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
