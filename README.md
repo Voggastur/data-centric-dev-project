@@ -41,13 +41,11 @@ The primary target audience are collaborators/employers who wish to see my knowl
 
 1. As an employer who recieved a link to Johans website, I want to see the page to see if it can handle backend database management, so that I can assess if Johan is eligible for a position handling databases.
 
-2. As an assessor I will judge the website on the totality of looks, documentation, semantics and other things, so that I can assess his score.
+2. As a collaborator I want to see if Johan can be of use in a Flask project, so I want to see Johans website. Additionally I want to see his repository to evaluate the level of the Python code.
 
-3. As a collaborator I want to see if Johan can be of use in a Flask project, so I want to see Johans website. Additionally I want to see his repository to evaluate the level of the Python code.
+3. As another type of collaborator I want to see if Johan can make use of dynamic content, so I will visit Johans website and try to add some content.
 
-4. As another type of collaborator I want to see if Johan can make use of dynamic content, so I will visit Johans website and try to add some content.
-
-5. As a fan of roleplaying in Johans roleplay group, I want to update my heroes possessions of gold coins every round we play, because the game-master objected to my amount of gold in an earlier game.
+4. As a fan of roleplaying in Johans roleplay group, I want to update my heroes possessions of gold coins every round we play, because the game-master objected to my amount of gold in an earlier game.
 
 
 #### II. Wireframes: <a name="UX3"></a>
@@ -165,26 +163,22 @@ Upon completion of an adventure updating is needed for the heroes equipment and 
 1. As an employer I go to see Johans website, if he's really as good as he postulated in his CV.
 
     * I click the Add hero link to change view, and input a hero. Afterwards I check that the hero appears in the list of heroes.
-
-2. As an assessor I go to Johans website determined to check every nook and cranny among which..
-
-    * Test if all links work.
-    * Try to submit a new hero.
+    * Also test if the links work.
     * Try to submit a new adventure.
-    * Try to edit a hero.
-    * Try to edit an adventure.
+    * Try to edit an existing hero.
+    * Try to edit an existing adventure.
 
-3. As collaborator number 1 I check out Johans website to evaluate his skills, to measure his eligibility for developing a Flask project in a team.
+2. As collaborator number 1 I check out Johans website to evaluate his skills, to measure his eligibility for developing a Flask project in a team.
 
     * I go to the website and click Add hero and submit a new hero with the name Spiderman. Afterwards I see that Spiderman appears on the page. 
     Afterwards I use the link to the repository and check the python file. I scroll down to see @app.route for insert_hero, which dictates how Spiderman was posted to mongo.db.heroes.
 
-4. As collaborator 2 I want to see Johans website to see if he can show database content.
+3. As collaborator 2 I want to see Johans website to see if he can show database content.
 
     * I go to the website and input a new adventure. Afterwards I will see the new adventure on the adventure tab.
     * I will also use google developer mode to check the responsiveness of the page, and the css and javascript source.
 
-5. As a player in Johans roleplay group, I want to be able to store variables for my hero for the upcoming roleplay session.
+4. As a player in Johans roleplay group, I want to be able to store variables for my hero for the upcoming roleplay session.
 
     * Firstly I click the add adventure link to add context for the hero I am about to enter.
     * Secondly using paper sheets from the last roleplay session, I enter information about my hero. I make sure to add the 7 silver coins I made hunting rabbits in the last game into my possessions.
@@ -209,7 +203,7 @@ The following process was used to deploy the project:
 9. Login into heroku via the git CLI with $ heroku login
 10. Add remote repo to git repo with: $ heroku git:remote -a heroes84
 11. Push git repo to heroku: $ git push -u heroku master
-12. Retrieve link from the push message https://heroes84.herokuapp.com/
+12. Retrieve link from the push message
 
 
 ## 7. Credits <a name="Credits"></a>
